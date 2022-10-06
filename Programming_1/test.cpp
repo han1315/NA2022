@@ -22,7 +22,12 @@ public:
   
   Comparable f(Comparable x)
   {
-    return( 1 / x - tan(x) );
+    return( 1.0 / x - tan(x) );
+  }
+
+  Comparable fd(Comparable x)
+  {
+    return( - 1.0 / (x * x) - pow(1.0 / cos(x) , 2));
   }
 
   int sgn(Comparable x)
@@ -52,7 +57,7 @@ public:
 	c = a + h;
 	w = f(c);
 	k = i;
-	if((abs(h) < delta ) || (abs(w) < eps))
+	if((abs(h) < delta) || (abs(w) < eps))
 	{
 	  break;
 	}
@@ -66,9 +71,32 @@ public:
   
 };
 
+
+template <typename Comparable>
+class NewtonMethod : public EquationSolver<double>
+{
+public:
+  void N_Method()
+  {
+    c = 1;
+    for(int i=0 ; i<M ;i++)
+    {        
+      u = f(c);
+      if(abs(u) < eps)
+      {
+	break;
+      }
+      c = c - u / fd(c);
+    }
+  }
+};
+
 int main()
 {
   BisectionMethod<double> A;
+  NewtonMethod<double> B;
   A.B_Method();
   cout<<A.root()<<endl;
+  B.N_Method();
+  cout<<B.root()<<endl;
 }
