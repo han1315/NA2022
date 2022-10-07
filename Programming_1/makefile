@@ -1,3 +1,3 @@
-make: test.cpp
-	g++ -o test test.cpp
-	./test
+make: Solve.h Solve.cpp
+	g++ -o Solve Solve.h Solve.cpp
+	./Solve
