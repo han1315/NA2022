@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
   BisectionMethod<double> A;
-  NewtonMethod<double> B;
+  NewtonMethod<double> B,D,E;
   SecantMethod<double> C;
   
   cout<<"Question B"<<endl;
@@ -48,19 +48,19 @@ int main()
   cout<<"Secant Method : "<<C.root()<<endl;
   cout<<endl;
 
-  double z;
+  double y,z;
   cout<<"Question F"<<endl;
-  B.N_Method(11);
-  z = B.root();
-  z = z * 180 / PI;
-  cout<<"a : "<<z<<endl;
-  B.N_Method(12);
-  z = B.root();
-  z = z * 180 / PI;
-  cout<<"b : "<<z<<endl;
+  D.N_Method(11);
+  z = D.root();
+  y = z * 180 / PI;
+  cout<<"a : "<<y<<endl;
+  E.N_Method(12);
+  z = E.root();
+  y = z * 180 / PI;
+  cout<<"b : "<<y<<endl;
   C.S_Method(13);
   z = C.root();
-  z = z * 180 / PI;
-  cout<<"c : "<<z<<endl;
+  y = z * 180 / PI;
+  cout<<"c : "<<y<<endl;
   cout<<endl;
 }

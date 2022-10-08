@@ -17,13 +17,13 @@ public:
   Comparable u;
   Comparable v;
   Comparable w;
-  Comparable M = 100;
+  Comparable M = 10000;
   Comparable k;
   Comparable A;
   Comparable B;
   Comparable C;
   Comparable D;
-  Comparable sig = 11.5 / 180 * PI;
+  Comparable sig = (11.5 / 180) * PI;
   Comparable delta = DBL_EPSILON;
   Comparable eps = DBL_EPSILON;
 
@@ -33,7 +33,7 @@ public:
     {
     case 1:
       a = 0;
-      b = PI /2;
+      b = PI / 2;
       break;
 
     case 2:
@@ -82,11 +82,11 @@ public:
       break;
 
     case 11:
-      c = 33 /180 * PI;
+      c = (33 / 180) * PI;
       break;
 
     case 12:
-      c = 33 /180 * PI;
+      c = 33 / 180 * PI;
       break;
 
     case 13:
@@ -117,11 +117,11 @@ public:
       break;
 
     case 5:
-      return (tan(x));
+      return (tan(x) - x);
       break;
       
     case 6:
-      return (tan(x));
+      return (tan(x) - x);
       break;
 
     case 7:
@@ -181,11 +181,11 @@ public:
       break;
 
     case 5:
-      return(pow(1.0 / cos(x) , 2));
+      return(pow(1.0 / cos(x) , 2) - 1);
       break;
       
     case 6:
-      return(pow(1.0 / cos(x) , 2));
+      return(pow(1.0 / cos(x) , 2) - 1);
       break;
 
     case 7:
