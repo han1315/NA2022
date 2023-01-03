@@ -1,0 +1,26 @@
+\documentclass{ctexart}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+
+\title{Spline}
+
+\author{洪晨瀚 \\ 信息与计算科学 3200300133}
+
+\begin{document}
+
+\maketitle
+
+\section*{设计思路}
+\begin{flushleft}
+  vector<double> X ：储存节点 \\
+  vector<double> U ：储存$\mu_i$ \\
+  vector<double> L ：储存$\lambda_i$ \\
+  MatrixXd A(n, n) ：由$\mu$和$\lambda$组成的三斜率方程组 \\
+  MatrixXd T(X.size(), 4) ：插值表 \\
+  MatrixXd B(X.size() - 2, 1) ：由$\mu$和$\lambda$组成的三湾矩方程组 \\
+  通过计算$M=A'*B$, 得到样条多项式。
+\end{flushleft}
+
+\end{document}
